@@ -1,19 +1,30 @@
-# README
-# admin-system
-take assistance and calculate payroll
+# Admin system
 
-* Ruby version
+# TEAM
+* Rafael Lara [@litola](https://github.com/litola)
 
-* System dependencies
+# Project Description
 
-* Configuration
+This project helps facilitate taking workers  assistance with a log of vacations days and calculate basic payroll.  
 
-* Database creation
+# Install
 
-* Database initialization
+Pending
 
-* How to run the test suite
+# How to use
 
-* Services (job queues, cache servers, search engines, etc.)
+Pending
 
-* Deployment instructions
+# Features
+
+* Suport Admin and different employees job titles. (Admin, Manager, Employee)
+* Admin should be able to create Managers and employees.
+* Admin create work shifts.
+* Admin makes any correction if needed.
+* Aprove payrolls and vacations.
+* Managers take assistance of employees.
+* Managers send to approval the biweekly payments.
+
+Stretch:
+* vacation Log
+
