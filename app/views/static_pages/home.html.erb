@@ -1,1 +1,10 @@
-Static homepage
+<% if current_user %>
+hi <%= current_user.name %>, you are <%= current_user.role %>
+<br>
+  <% if current_user.super? %>
+    You rock Super!
+  <% end %>
+  <% if current_user.admin? %>
+    You are a great Admin!
+  <% end %>
+<% end %>

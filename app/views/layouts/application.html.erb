@@ -26,12 +26,15 @@
           </li>
 
         <!-- Session buttons -->
-          <li class="nav-item">
-            <%=link_to("Login", new_user_session_path , class: "nav-link btn btn-outline-success") %>
-          </li>
+        <% if current_user %>
           <li class="nav-item">
             <%=link_to("Logout", destroy_user_session_path, method: "delete",  class: "nav-link btn btn-outline-danger") %>
           </li>
+        <% else %>
+          <li class="nav-item">
+            <%=link_to("Login", new_user_session_path , class: "nav-link btn btn-outline-success") %>
+          </li>
+        <% end %>
           <!-- end session buttons -->
         </ul>
       </div>
