@@ -1,7 +1,7 @@
 class Company < ApplicationRecord
-  validates :name, null: false
-  validates :contact, null: false
-  validates :contact_number, null: false
+  validates :name, presence: true
+  validates :contact, presence: true
+  validates :contact_number, presence: true
 
   has_many :clients
   has_many :projects, through: :clients 
