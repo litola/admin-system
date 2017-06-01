@@ -7,4 +7,6 @@ hi <%= current_user.name %>, you are <%= current_user.role %>
   <% if current_user.admin? %>
     You are a great Admin!
   <% end %>
+<% else %>
+  Please log in
 <% end %>
