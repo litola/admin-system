@@ -10,7 +10,7 @@ class CreateClients < ActiveRecord::Migration[5.1]
       t.string :city
       t.string :zipcode
       t.string :country
-      t.string :contact
+      t.string :contact, null: false
       t.string :contact_number, null: false
       t.integer :company_id, null: false
 
