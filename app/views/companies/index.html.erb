@@ -1,0 +1,25 @@
+<h1>Companies</h1>
+<%=link_to("New", "#") %>
+<hr>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Contact</th>
+      <th>Contact Number</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @companies.each do |c| %>
+    <tr>
+      <td><%= c.id  %></td>
+      <td><%= link_to(c.name, "url" ) %></td>
+      <td><%= c.contact %></td>
+      <td><%= c.contact_number %></td>
+      <td><%=link_to("edit", "#") %> <%=link_to("delete", "#") %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

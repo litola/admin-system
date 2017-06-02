@@ -38,6 +38,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def super_only
+    unless current_user.super?
+      redirect_to root_path, :alert => "Access denied."
+    end
+  end
+
+
   def secure_params
     params.require(:user).permit(:role)
   end
