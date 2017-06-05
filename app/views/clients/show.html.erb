@@ -1,0 +1,26 @@
+<br>
+<h2>Show Client</h2>
+<hr>
+<div class="row">
+  <div class="col-md-5">
+    <b>Name:</b> <%= @client.name %> <br>
+    <b>Phone:</b> <%= @client.phone %> <br>
+    <b>Street:</b> <%= @client.street %> <br>
+    <b>City: </b><%= @client.city %> <br>
+    <b>Country: </b><%= @client.country %> <br>
+    <b>Contact: </b><%= @client.contact %> <br>
+
+  </div>
+  <div class="col-md-5">
+    <b>Rfc: </b><%= @client.rfc %> <br>
+    <b>Neighborhood: </b><%= @client.neighborhood %> <br>
+    <b>Number: </b><%= @client.number %> <br>
+    <b>Zipcode: </b><%= @client.zipcode %> <br>
+    <b>Contact number: </b><%= @client.contact_number %> <br>
+  </div> <br>
+ 
+</div>
+<br>
+<%=link_to("edit", edit_client_path(@client.id)) %> 
+<%=link_to("back", clients_path) %> 
+
