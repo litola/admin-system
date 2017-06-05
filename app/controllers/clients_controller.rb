@@ -4,7 +4,11 @@ class ClientsController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
   def index
-    @clients = Client.all
+    if current_user.super?
+      @clients = Client.all
+    else
+      @clients = Client.where(company_id: current_user.company_id)
+    end
     # respond_to do |format|
     #   format.html
     #   format.json { render :json => @companies }
@@ -22,7 +26,7 @@ class ClientsController < ApplicationController
   end
 
   def create
-    @client = Client.new(company_params)
+    @client = Client.new(client_params)
     if @client.save
       redirect_to companies_path, notice: "Client was successfully created."
     else
@@ -32,9 +36,9 @@ class ClientsController < ApplicationController
   end
 
   def update
-    @client.update_attributes(company_params)
+    @client.update_attributes(client_params)
     if @client.save
-      redirect_to companies_path, notice: "Client was successfully updated."
+      redirect_to clients_path, notice: "Client was successfully updated."
     else
       @errors = @client.errors.full_messages
       render 'edit'
@@ -59,7 +63,7 @@ private
   end
 
   def client_params
-    params.require(:clients).permit(:name, :phone, :rfc, :street, :number, :neighborhood, :city, :zipcode, :country, :contact, :contact_number, :company_id)
+    params.require(:client).permit(:name, :phone, :rfc, :street, :number, :neighborhood, :city, :zipcode, :country, :contact, :contact_number, :company_id)
   end
 
 end

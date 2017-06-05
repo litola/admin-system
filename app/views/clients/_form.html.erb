@@ -2,6 +2,13 @@
   <div class="form-group">
     <%= f.text_field :name, placeholder: "Name", class: "form-control" %><br>
   </div>
+  <% if current_user.super? %>
+    <div class="form-group">
+      <%= f.select :company_id, Company.all.collect{ |c| [ c.name, c.id ] }, { include_blank: true },class: "form-control" %><br>
+    </div>
+  <% elsif current_user.admin?   %>
+    <%= f.hidden  :company_id, value: current_user.company_id %><br>
+  <% end %>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">

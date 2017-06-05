@@ -1,9 +1,8 @@
 <br>
-<h2>Show Company</h2>
+<h2><%= @company.name %> </h2>
 <hr>
 <div class="row">
   <div class="col-md-5">
-    <b>Name:</b> <%= @company.name %> <br>
     <b>Street:</b> <%= @company.street %> <br>
     <b>City: </b><%= @company.city %> <br>
     <b>Country: </b><%= @company.country %> <br>
@@ -21,3 +20,29 @@
 <br>
 <%=link_to("edit", edit_company_path(@company.id)) %> 
 <%=link_to("back", companies_path) %> 
+
+<hr>
+<h3>Clients:</h3>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Contact</th>
+      <th>Contact Number</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @company.clients.each do |c| %>
+    <tr>
+      <td><%= c.id  %></td>
+      <td><%= link_to(c.name, client_path(c.id) ) %></td>
+      <td><%= c.phone %></td>
+      <td><%= c.contact %></td>
+      <td><%= c.contact_number %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
