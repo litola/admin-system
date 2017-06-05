@@ -5,10 +5,10 @@ class CompaniesController < ApplicationController
 
   def index
     @companies = Company.all
-    respond_to do |format|
-      format.html
-      format.json { render :json => @companies }
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render :json => @companies }
+    # end
   end
 
   def show
@@ -26,6 +26,7 @@ class CompaniesController < ApplicationController
     if @company.save
       redirect_to companies_path, notice: "Company was successfully created."
     else
+      @errors = @company.errors.full_messages
       render 'new'
     end
   end
