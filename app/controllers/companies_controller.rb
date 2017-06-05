@@ -32,9 +32,18 @@ class CompaniesController < ApplicationController
   end
 
   def update
+    @company.update_attributes(company_params)
+    if @company.save
+      redirect_to companies_path, notice: "Company was successfully updated."
+    else
+      @errors = @company.errors.full_messages
+      render 'edit'
+    end
   end
 
   def destroy
+    @company.destroy
+    redirect_to companies_path
   end
 
 private

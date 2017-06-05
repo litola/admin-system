@@ -1,4 +1,23 @@
+<br>
 <h2>Show Company</h2>
-<%=link_to("edit", edit_company_path(@company.id)) %> <br>
 <hr>
-<%= @company.name %>
+<div class="row">
+  <div class="col-md-5">
+    <b>Name:</b> <%= @company.name %> <br>
+    <b>Street:</b> <%= @company.street %> <br>
+    <b>City: </b><%= @company.city %> <br>
+    <b>Country: </b><%= @company.country %> <br>
+    <b>Contact number: </b><%= @company.contact_number %> <br>
+
+  </div>
+  <div class="col-md-5">
+    <b>Rfc: </b><%= @company.rfc %> <br>
+    <b>Neighborhood: </b><%= @company.neighborhood %> <br>
+    <b>Zipcode: </b><%= @company.zipcode %> <br>
+    <b>Contact: </b><%= @company.contact %> <br>
+  </div> <br>
+ 
+</div>
+<br>
+<%=link_to("edit", edit_company_path(@company.id)) %> 
+<%=link_to("back", companies_path) %> 
