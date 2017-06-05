@@ -1,0 +1,28 @@
+<br>
+<h2>Clients</h2>
+<%=link_to("New", new_client_path) %>
+<hr>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Contact</th>
+      <th>Contact Number</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @clients.each do |c| %>
+    <tr>
+      <td><%= c.id  %></td>
+      <td><%= link_to(c.name, company_path(c.id) ) %></td>
+      <td><%= c.phone %></td>
+      <td><%= c.contact %></td>
+      <td><%= c.contact_number %></td>
+      <td><%=link_to("edit", edit_client_path(c.id)) %> <%=link_to("delete", client_path(c.id), method: "DELETE", data: {confirm: "Are you sure?"}) %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
