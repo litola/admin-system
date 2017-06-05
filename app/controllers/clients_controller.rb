@@ -59,7 +59,7 @@ private
   end
 
   def client_params
-    # params.require(:company).permit(:name, :rfc, :street, :number, :neighborhood, :city, :zipcode, :country, :phone, :contact, :contact_number)
+    params.require(:clients).permit(:name, :phone, :rfc, :street, :number, :neighborhood, :city, :zipcode, :country, :contact, :contact_number, :company_id)
   end
 
 end
