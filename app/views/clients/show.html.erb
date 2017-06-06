@@ -1,5 +1,7 @@
 <br>
 <h2><%= @client.name %> </h2>
+<%=link_to("edit", edit_client_path(@client.id)) %> 
+<%=link_to("back", clients_path) %> 
 <hr>
 <div class="row">
   <div class="col-md-5">
@@ -20,8 +22,7 @@
  
 </div>
 <br>
-<%=link_to("edit", edit_client_path(@client.id)) %> 
-<%=link_to("back", clients_path) %> 
+
 
 <hr>
 

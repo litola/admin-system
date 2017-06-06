@@ -13,9 +13,9 @@
     </tr>
   </thead>
   <tbody>
-  <% @companies.each do |c| %>
+  <% @companies.each_with_index do |c, i| %>
     <tr>
-      <td><%= c.id  %></td>
+      <td><%= i + 1  %></td>
       <td><%= link_to(c.name, company_path(c.id) ) %></td>
       <td><%= c.contact %></td>
       <td><%= c.contact_number %></td>
