@@ -1,0 +1,2 @@
+class WorkerStatus < ApplicationRecord
+end

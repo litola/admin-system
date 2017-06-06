@@ -12,3 +12,17 @@
 
 # PROJECT
 # Project.create(client_id: 1, name: "Project 1")
+
+# WORK SHIFT
+# WorkShift.create(company_id: 1, name: "Morning")
+# WorkShift.create(company_id: 1, name: "Night")
+
+# JOB
+# Job.create(company_id: 1, name: "Administrador")
+# Job.create(company_id: 1, name: "Supervisor")
+# Job.create(company_id: 1, name: "Guardia")
+
+#WORKER STATUS
+#WorkerStatus.create(company_id: 1, name: "Activo")
+#WorkerStatus.create(company_id: 1, name: "Baja") 
+#WorkerStatus.create(company_id: 1, name: "Suspendido") 

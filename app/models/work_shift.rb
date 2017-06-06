@@ -1,0 +1,3 @@
+class WorkShift < ApplicationRecord
+  
+end
