@@ -1,6 +1,9 @@
 # SUPER USER
 # User.create(email: "super@super.com", password: "password", name: "super test", role:0)
 
+# ADMIN USER
+# User.create(email: "admin@admin.com", password: "password", name: "admin test", role:1)
+
 # COMPANY 
 # Company.create(name: "Company A", contact: "John", contact_number:"123421314354")
 
