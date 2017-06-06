@@ -7,7 +7,7 @@
       <%= f.select :company_id, Company.all.collect{ |c| [ c.name, c.id ] }, { include_blank: true },class: "form-control" %><br>
     </div>
   <% elsif current_user.admin?   %>
-    <%= f.hidden  :company_id, value: current_user.company_id %><br>
+    <%= f.hidden_field  :company_id, value: current_user.company_id %><br>
   <% end %>
   <div class="row">
     <div class="col-md-6">
