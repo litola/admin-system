@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
   before_action :authenticate_user!
-  before_action :super_only
-  before_action :set_company, only: [:show, :edit, :update, :destroy]
+  before_action :super_admin_only
+  before_action :set_client, only: [:show, :edit, :update, :destroy]
 
   def index
     if current_user.super?
@@ -28,7 +28,7 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
     if @client.save
-      redirect_to companies_path, notice: "Client was successfully created."
+      redirect_to clients_path, notice: "Client was successfully created."
     else
       @errors = @client.errors.full_messages
       render 'new'
@@ -52,13 +52,13 @@ class ClientsController < ApplicationController
 
 private
 
-  def super_only
-    unless current_user.super?
+  def super_admin_only
+    unless current_user.super? || current_user.admin?
       redirect_to root_path, :alert => "Access denied."
     end
   end
 
-  def set_company
+  def set_client
     @client = Client.find(params[:id])
   end
 

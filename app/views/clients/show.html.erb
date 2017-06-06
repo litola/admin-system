@@ -1,9 +1,8 @@
 <br>
-<h2>Show Client</h2>
+<h2><%= @client.name %> </h2>
 <hr>
 <div class="row">
   <div class="col-md-5">
-    <b>Name:</b> <%= @client.name %> <br>
     <b>Phone:</b> <%= @client.phone %> <br>
     <b>Street:</b> <%= @client.street %> <br>
     <b>City: </b><%= @client.city %> <br>
@@ -23,4 +22,8 @@
 <br>
 <%=link_to("edit", edit_client_path(@client.id)) %> 
 <%=link_to("back", clients_path) %> 
+
+<hr>
+
+<%= render "./projects/index" %>
 
