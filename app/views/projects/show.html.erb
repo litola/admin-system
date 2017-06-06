@@ -1,0 +1,9 @@
+<br>
+<h2><%= @project.client.name %></h2>
+<hr>
+<h3><%= @project.name %></h3>
+Contact: <%= @project.contact %> <br>
+Contact number: <%= @project.contact_number %>
+<br>
+<%=link_to("edit", edit_client_project_path(@project.client.id, @project.id)) %> 
+<%=link_to("back", client_path(@project.client.id)) %> 
