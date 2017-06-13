@@ -1,0 +1,134 @@
+<%= form_for @worker do |f| %>
+
+  <% if current_user.super? %>
+    <div class="form-group">
+      <%= f.select :company_id, Company.all.collect{ |c| [ c.name, c.id ] }, { include_blank: true },class: "form-control" %><br>
+    </div>
+  <% elsif current_user.admin?   %>
+    <%= f.hidden_field  :company_id, value: current_user.company_id %><br>
+  <% end %>
+  <h3>Personal</h3> <br>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.text_field :first_name, placeholder: "Firstname", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :first_lastname, placeholder: "First Lastname", class: "form-control" %><br>
+      </div>
+      
+      <div class="form-group">
+        <%= f.text_field :street, placeholder: "Street", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :neighborhood, placeholder: "Neighborhood", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :city, placeholder: "City", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :zip, placeholder: "Zipcode", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        Dob: <%= f.date_select :dob, class: "form-control" %><br>
+      </div>
+    </div> <!-- Col 1 end -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.text_field :second_name, placeholder: "Middle", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :second_lastname, placeholder: "Second Lastname", class: "form-control" %><br>
+      </div>
+    
+      <div class="form-group">
+        <%= f.text_field :country, placeholder: "Country", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :number, placeholder: "Number", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :phone, placeholder: "Phone", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :cellphone, placeholder: "Cellphone", class: "form-control" %><br>
+      </div>
+  
+    </div>  <!-- Col 2 end -->
+  </div>
+  <hr><br>
+  <h3>Other</h3> <br>
+  <div class="row">
+    <div class="col-md-6">
+     <div class="form-group">
+          <%= f.select :worker_status_id, WorkerStatus.all.collect{ |s| [ s.name, s.id ] }, { include_blank: true },class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+          <%= f.select :job_id, Job.all.collect{ |j| [ j.name, j.id ] }, { include_blank: true },class: "form-control" %><br>
+      </div>
+       <div class="form-group">
+        Day of entry <%= f.date_select :day_of_entry, class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.check_box :cartilla_militar, class: "checkbox inline"  %> Cartilla Militar <br>
+      </div>
+       <div class="form-group">
+       Vigencia Cartilla <%= f.date_select :vigencia_cartilla, class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.check_box :porte_arma, class: "checkbox inline" %> Porte Arma <br>
+      </div>
+      <div class="form-group">
+         <%= f.check_box :licencia_conducir, class: "checkbox inline" %> Licencia<br>
+      </div>
+    </div> <!-- Col 1 end -->
+    <div class="col-md-6">
+       <div class="form-group">
+        <%= f.text_field :daily_income, placeholder: "Daily Income", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :extra_hour, placeholder: "Extra Hour", class: "form-control" %><br>
+      </div>  
+       <div class="form-group">
+        <%= f.text_field :seguro_social, placeholder: "Seguro Social", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :numero_porte_arma, placeholder: "Numero Porte Arma", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :matricula_licencia_conducir, placeholder: "# Licencia", class: "form-control" %><br>
+      </div>
+   
+    </div>  <!-- Col 2 end -->
+  </div>
+  <h3>Contact</h3> <br>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.text_field :marital_status, placeholder: "Marital Status", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :dad_name, placeholder: "Dad Name", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :mother_name, placeholder: "Mother Name", class: "form-control" %><br>
+      </div>
+    </div> <!-- Col 1 end -->
+    <div class="col-md-6">
+     
+      <div class="form-group">
+        <%= f.text_field :spouse_name, placeholder: "Spouse Name", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :spouse_phone, placeholder: "Spouse phone", class: "form-control" %><br>
+      </div>
+    </div>  <!-- Col 2 end -->
+  </div>
+  <%= f.submit "Submit", :class => "btn btn-primary" %>
+
+<%end%>
+
+ 
+
+
+

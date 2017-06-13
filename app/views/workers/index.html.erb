@@ -1,0 +1,28 @@
+<br>
+<h2>Workers</h2>
+<%=link_to("New", new_worker_path) %>
+<hr>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Cellphone</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @workers.each_with_index do |w, i| %>
+    <tr>
+      <td><%= i + 1 %></td>
+      <td><%= link_to(w.fullname, worker_path(w.id) ) %></td>
+      <td><%= w.phone %></td>
+      <td><%= w.cellphone %></td>
+      <td><%= w.worker_status_id%></td>
+      <td><%=link_to("edit", edit_worker_path(w.id)) %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

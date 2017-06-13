@@ -1,0 +1,62 @@
+<br>
+<h2><%= @worker.worker_number %>. <%= @worker.fullname %> </h2>
+<small><%= @worker.job_id %>, <%= @worker.worker_status_id %></small>
+
+<br>
+<%=link_to("edit", edit_worker_path(@worker.id)) %> 
+<%=link_to("back", workers_path) %> 
+<hr>
+
+<h3>Personal</h3>
+<div class="row">
+  <div class="col-md-6">
+    <b>Dob:</b> <%= @worker.dob %> <br>
+    <b>Phone:</b> <%= @worker.phone %> <br>
+    <b>Street:</b> <%= @worker.street %> <br>
+    <b>City: </b><%= @worker.city %> <br>
+    <b>Country: </b><%= @worker.country %> <br>
+    <b>Seguro Social: </b><%= @worker.curp %> <br>
+  </div>
+  <div class="col-md-6">
+    <b>Cellphone:</b> <%= @worker.cellphone %> <br>
+    <b>Neighborhood: </b><%= @worker.neighborhood %> <br>
+    <b>Number: </b><%= @worker.number %> <br>
+    <b>Zipcode: </b><%= @worker.zip %> <br>
+    <b>Curp: </b><%= @worker.curp %> <br>
+  </div> <br>
+</div><br>
+
+<hr>
+<h3>Other</h3>
+<div class="row">
+  <div class="col-md-6">
+    <b>Cartilla:</b> <%= @worker.cartilla_militar %> <br>
+    <b>Porte Arma:</b> <%= @worker.porte_arma %> <br>
+    <b>Licencia:</b> <%= @worker.licencia_conducir %> <br>
+    <b>Day of entry:</b> <%= @worker.day_of_entry %> <br>
+  </div>
+  <div class="col-md-6">
+    <b>Vigencia Cartilla:</b> <%= @worker.vigencia_cartilla %> <br>
+    <b>Numero Porte Arma:</b> <%= @worker.numero_porte_arma %> <br>
+    <b># Licencia:</b> <%= @worker.matricula_licencia_conducir %> <br>
+    <b>Daily income:</b> $<%= @worker.daily_income %> <br>
+    <b>Extra hour:</b> $<%= @worker.extra_hour %> <br>
+  </div> <br>
+</div>
+<br>
+
+<hr>
+<h3>Contact</h3>
+<div class="row">
+  <div class="col-md-6">
+    <b>Marital status:</b> <%= @worker.marital_status %> <br>
+    <b>Dad name:</b> <%= @worker.dad_name %> <br>
+    <b>Mother name: </b><%= @worker.mother_name %> <br>
+  </div>
+  <div class="col-md-6">
+    <b>Spouse name: </b><%= @worker.spouse_name %> <br>
+    <b>Spouse Number: </b><%= @worker.spouse_phone %> <br>
+  </div> <br>
+</div>
+<br>
+
