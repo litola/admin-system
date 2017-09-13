@@ -57,24 +57,24 @@
     </div>  <!-- Col 2 end -->
   </div>
   <hr><br>
-  <h3>Other</h3> <br>
+  <h3>Otros</h3> <br>
   <div class="row">
     <div class="col-md-6">
      <div class="form-group">
-          <%= f.select :worker_status_id, WorkerStatus.all.collect{ |s| [ s.name, s.id ] }, { include_blank: true },class: "form-control" %><br>
+          Status: <%= f.select :worker_status_id, WorkerStatus.all.collect{ |s| [ s.name, s.id ] }, class: "form-control" %><br>
       </div>
       <div class="form-group">
-          <%= f.select :job_id, Job.all.collect{ |j| [ j.name, j.id ] }, { include_blank: true },class: "form-control" %><br>
+          Puesto: <%= f.select :job_id, Job.all.collect{ |j| [ j.name, j.id ] }, class: "form-control" %><br>
       </div>
        <div class="form-group">
         Day of entry <%= f.date_select :day_of_entry, :start_year=> Date.today.year - 100, :end_year => Date.today.year, class: "form-control" %><br>
       </div>
       <div class="form-group">
-        <%= f.check_box :cartilla_militar, class: "checkbox inline"  %> Cartilla Militar <br>
+        <%= f.check_box :cartilla_militar, class: "checkbox inline" %> Cartilla Militar <br>
       </div>
-       <div class="form-group">
+      <!--  <div class="form-group">
        Vigencia Cartilla <%= f.date_select :vigencia_cartilla, :include_blank => true, class: "form-control" %><br>
-      </div>
+      </div> -->
       <div class="form-group">
         <%= f.check_box :porte_arma, class: "checkbox inline" %> Porte Arma <br>
       </div>
@@ -101,7 +101,7 @@
    
     </div>  <!-- Col 2 end -->
   </div>
-  <h3>Contact</h3> <br>
+  <h3>Contacto</h3> <br>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
