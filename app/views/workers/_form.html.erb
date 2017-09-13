@@ -30,7 +30,7 @@
         <%= f.text_field :zip, placeholder: "Zipcode", class: "form-control" %><br>
       </div>
       <div class="form-group">
-        Dob: <%= f.date_select :dob, class: "form-control" %><br>
+        Dob: <%= f.date_select :dob, :start_year=> Date.today.year - 100, :end_year => Date.today.year, class: "form-control" %><br>
       </div>
     </div> <!-- Col 1 end -->
     <div class="col-md-6">
@@ -67,13 +67,13 @@
           <%= f.select :job_id, Job.all.collect{ |j| [ j.name, j.id ] }, { include_blank: true },class: "form-control" %><br>
       </div>
        <div class="form-group">
-        Day of entry <%= f.date_select :day_of_entry, class: "form-control" %><br>
+        Day of entry <%= f.date_select :day_of_entry, :start_year=> Date.today.year - 100, :end_year => Date.today.year, class: "form-control" %><br>
       </div>
       <div class="form-group">
         <%= f.check_box :cartilla_militar, class: "checkbox inline"  %> Cartilla Militar <br>
       </div>
        <div class="form-group">
-       Vigencia Cartilla <%= f.date_select :vigencia_cartilla, class: "form-control" %><br>
+       Vigencia Cartilla <%= f.date_select :vigencia_cartilla, :include_blank => true, class: "form-control" %><br>
       </div>
       <div class="form-group">
         <%= f.check_box :porte_arma, class: "checkbox inline" %> Porte Arma <br>
