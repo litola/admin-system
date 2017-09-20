@@ -2,6 +2,9 @@
 <h3>Projects:</h3>
 <br>
 <%=link_to("New", new_client_project_path(@client.id)) %>
+
+
+
 <table class="table">
   <thead class="thead-inverse">
     <tr>
@@ -13,14 +16,16 @@
     </tr>
   </thead>
   <tbody>
-  <% @client.projects.each_with_index do |project, i| %>
-    <tr>
-      <td><%= i +1 %></td>
-      <td><%= link_to(project.name, client_project_path(@client.id,project.id) ) %></td>
-      <td><%= project.contact %></td>
-      <td><%= project.contact_number %></td>
-      <td><%=link_to("edit", edit_client_project_path(@client.id, project.id)) %> <%=link_to("delete", client_project_path(@client.id, project.id), method: "DELETE", data: {confirm: "Are you sure?"}) %></td>
-    </tr>
-<% end %>
+  <% if @client.projects  %>
+    <% @client.projects.each_with_index do |project, i| %>
+      <tr>
+        <td><%= i +1 %></td>
+        <td><%= link_to(project.name, client_project_path(@client.id,project.id) ) %></td>
+        <td><%= project.contact %></td>
+        <td><%= project.contact_number %></td>
+        <td><%=link_to("edit", edit_client_project_path(@client.id, project.id)) %> <%=link_to("delete", client_project_path(@client.id, project.id), method: "DELETE", data: {confirm: "Are you sure?"}) %></td>
+      </tr>
+    <% end %>
+  <% end %>
   </tbody>
 </table>

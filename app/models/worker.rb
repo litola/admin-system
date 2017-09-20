@@ -1,5 +1,7 @@
 class Worker < ApplicationRecord
   belongs_to :company
+  belongs_to :job
+  belongs_to :worker_status
   # has_one :worker_status
   
   def fullname

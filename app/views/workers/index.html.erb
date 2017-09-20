@@ -9,6 +9,7 @@
       <th>Name</th>
       <th>Phone</th>
       <th>Cellphone</th>
+      <th>Puesto</th>
       <th>Status</th>
       <th></th>
     </tr>
@@ -20,7 +21,8 @@
       <td><%= link_to(w.fullname, worker_path(w.id) ) %></td>
       <td><%= w.phone %></td>
       <td><%= w.cellphone %></td>
-      <td><%= w.worker_status_id%></td>
+      <td><%= w.job.name%></td>
+      <td><%= w.worker_status.name%></td>
       <td><%=link_to("edit", edit_worker_path(w.id)) %></td>
     </tr>
 <% end %>
